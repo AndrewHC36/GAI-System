@@ -26,8 +26,8 @@ from source.Neuron import Node
 # basic pygame set-up
 p.init()
 SCREEN = (1920, 1080)
-#SURF = p.display.set_mode((0, 0), p.FULLSCREEN)
-SURF = p.display.set_mode((500, 500))
+SURF = p.display.set_mode((0, 0), p.FULLSCREEN)
+#SURF = p.display.set_mode((500, 500))
 p.display.set_caption("GUI AI")
 CLOCK = p.time.Clock()
 FPS = 60
@@ -42,6 +42,7 @@ O_LIST = []  # [[Neuron, POS]]; Object List
 SELECTED = None  # selected node
 
 but1 = GUI.Button((0, 0, 100, cnst["settings"]["MENU_HEADER"]), "+Node")
+but2 = GUI.Button((100, 0, 200, cnst["settings"]["MENU_HEADER"]), "+Weight")
 
 while LOOP:
     for e in p.event.get():
@@ -50,9 +51,7 @@ while LOOP:
             if e.button == 1: MOUSE_DATA[1][0] = 1
             elif e.button == 3: MOUSE_DATA[1][1] = 1
             for o in O_LIST:
-                #print(pos[0], MOUSE_DATA[0][0])
                 if ((abs(o.pos[0]-MOUSE_DATA[0][0]))**2)+(abs(o.pos[1]-MOUSE_DATA[0][1])**2) <= cnst["object"]["NODE_SIZE"]**2:  # select items
-                    print(True)
                     o.SELECTED = True
 
         elif e.type == p.MOUSEBUTTONUP:
@@ -72,6 +71,7 @@ while LOOP:
 
     p.draw.rect(SURF, (100, 100, 100), (0, 0, SCREEN[0], cnst["settings"]["MENU_HEADER"]))  # menu
     but1.render(SURF)
+    but2.render(SURF)
 
     for o in O_LIST:  # selected items
         if o.SELECTED is True:
@@ -83,8 +83,6 @@ while LOOP:
 
     for o in O_LIST:
         o.render(SURF)
-
-    print(O_LIST)
 
     p.display.flip()
     CLOCK.tick(FPS)

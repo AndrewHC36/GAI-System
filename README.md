@@ -2,33 +2,35 @@
 
 GAI stands for **G**raphic (GUI) **A**rtificial **I**ntelligence.
 
+## About
+#### Info
+This program or system is an GUI application made specifically
+for creating AI applications. The program is to provide an easier
+and more efficient programming.
+#### Description
+Neurons are objects in your project.
+Bias/Weights are your "lines" that transfer data between Neurons.
 
-## Info
-This program or system is an GUI application specifically
-for creating AI application. The reason I or we created this
-is to make developing AI visually and easier though this is
-intended to be a low-level software (meaning more closer to 
-a Programming Language). And this is also intentionally replacing
-AI programming on programming language.
-
-## Update
+## Software
+#### Updates
 Check [Changelog](CHANGELOG.md)
-
-## Bug Report
+Check [Todo list](TODO.md)
+#### Bug Report
 Please report bugs in the main issue in the repository.
+#### Doc
 
-## Requirements
+## Setup
+#### Requirement
 * Python 3.7 Interpreter
 * pygame 1.8.1 (GUI)
 * os, configparser (stdlib)
 
-
-## Setup
+#### Installing
 * Clone the GIT Repository
-* Run the `main.py`
+* Run from `main.py`
 
-## Funding
+## Other
+#### Questions
 
-
-## Help
-
+#### Funding
+We want this to be a free software but please fund us. (This will be added when needed)
